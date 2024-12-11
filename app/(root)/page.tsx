@@ -3,7 +3,6 @@ import { Pagination } from "@/shared/components/pagination";
 import { BlogResponseType, SearchParamsProps } from "@/types";
 import { fetchAPI } from "@/utils/fetch-api";
 import Head from "next/head";
-import blogApp from "@/public/blogApp.jpg";
 
 const PAGE_LIMIT = 3;
 
