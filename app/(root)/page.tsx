@@ -1,3 +1,4 @@
+import { PageProps } from "@/.next/types/app/layout";
 import { BlogItem } from "@/shared/components/blogItem";
 import { Pagination } from "@/shared/components/pagination";
 import { BlogResponseType, SearchParamsProps } from "@/types";
@@ -53,8 +54,16 @@ const getBlogs = async ({
   return { blogs: data, pagination: meta.pagination, pageNumber: page };
 };
 
-export default async function Home({ searchParams }: SearchParamsProps) {
-  const { page, search, tag } = searchParams;
+export default async function Home({
+  params,
+}: {
+  params: Promise<{
+    ["search"]: string | undefined;
+    ["tag"]: string | undefined;
+    ["page"]: string | undefined;
+  }>;
+}) {
+  const { page, search, tag } = await params;
   const { blogs, pagination, pageNumber } = await getBlogs({
     page: Number(page || 1),
     search,

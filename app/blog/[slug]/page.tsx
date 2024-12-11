@@ -28,9 +28,9 @@ const getBlog = async (slug: string | undefined) => {
 export default async function BlogPage({
   params,
 }: {
-  params: { slug: string | undefined };
+  params: Promise<{ slug: string | undefined }>;
 }) {
-  const { slug } = params;
+  const { slug } = await params;
 
   const blog = await getBlog(slug);
 
