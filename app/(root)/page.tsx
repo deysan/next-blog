@@ -35,7 +35,6 @@ const getBlogs = async ({
                 { title: { $contains: search } },
                 { description: { $contains: search } },
                 { content: { $contains: search } },
-                { tags: { $contains: search } },
               ],
             },
           }
