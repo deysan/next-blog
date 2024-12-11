@@ -30,7 +30,7 @@ export default async function BlogPage({
 }: {
   params: { slug: string | undefined };
 }) {
-  const { slug } = await params;
+  const { slug } = params;
 
   const blog = await getBlog(slug);
 

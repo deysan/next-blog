@@ -54,7 +54,7 @@ const getBlogs = async ({
 };
 
 export default async function Home({ searchParams }: SearchParamsProps) {
-  const { page, search, tag } = await searchParams;
+  const { page, search, tag } = searchParams;
   const { blogs, pagination, pageNumber } = await getBlogs({
     page: Number(page || 1),
     search,
