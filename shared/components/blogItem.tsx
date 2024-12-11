@@ -36,7 +36,7 @@ export function BlogItem({ blog }: { blog: BlogType }) {
         {blog.tags.length > 0 && (
           <div className="flex gap-2 mb-6">
             {blog.tags.map(({ id, name }) => (
-              <Link key={id} href={`?tag=${name}`}>
+              <Link key={id} href={`/tags/${name}`}>
                 <Badge name={name} />
               </Link>
             ))}

@@ -19,6 +19,7 @@ export type ImageType = {
 export type TagType = {
   id: number;
   name: string;
+  updatedAt: string;
 };
 
 export type PaginationType = {
@@ -33,6 +34,11 @@ export type MetaType = {
 
 export type BlogResponseType = {
   data: BlogType[];
+  meta: MetaType;
+};
+
+export type TagResponseType = {
+  data: TagType[];
   meta: MetaType;
 };
 

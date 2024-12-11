@@ -1,9 +1,9 @@
-import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Markdown from "react-markdown";
 
+import { SEO } from "@/shared/components/seo";
 import { Badge } from "@/shared/ui/badge";
 import { BlogResponseType } from "@/types";
 import { formatDate } from "@/utils/api-helpers";
@@ -47,21 +47,14 @@ export default async function BlogPage({
 
   return (
     <>
-      <Head>
-        <title>{pageTitle}</title>
-        <meta name="description" content={pageDescription} />
-        <meta name="keywords" content={keywords} />
-        <meta property="og:title" content={pageTitle} />
-        <meta property="og:description" content={pageDescription} />
-        <meta property="og:image" content={imageUrl} />
-        <meta property="og:url" content={pageUrl} />
-        <meta property="og:type" content="article" />
-        <meta property="og:site_name" content="Blog App" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={pageTitle} />
-        <meta name="twitter:description" content={pageDescription} />
-        <meta name="twitter:image" content={imageUrl} />
-      </Head>
+      <SEO
+        title={pageTitle}
+        description={pageDescription}
+        url={pageUrl}
+        image={imageUrl}
+        keywords={keywords}
+        type="article"
+      />
 
       <section>
         <Image

@@ -18,16 +18,11 @@ export function Header() {
 
       <div className="flex items-center gap-x-4">
         <a
-          href="#"
+          href="https://github.com/deysan"
           className="text-gray-500 hover:text-gray-700 transition-all duration-300 font-medium"
+          target="_blank"
         >
-          About
-        </a>
-        <a
-          href="#"
-          className="text-gray-500 hover:text-gray-700 transition-all duration-300 font-medium"
-        >
-          Contact
+          Author
         </a>
       </div>
     </header>
