@@ -65,15 +65,16 @@ const getBlogs = async ({
 };
 
 export default async function Home({
-  params,
+  searchParams,
 }: {
-  params: Promise<{
+  searchParams: Promise<{
     ["search"]: string | undefined;
     ["tag"]: string | undefined;
     ["page"]: string | undefined;
   }>;
 }) {
-  const { page, search, tag } = await params;
+  const { page, search, tag } = await searchParams;
+
   const { blogs, pagination, pageNumber } = await getBlogs({
     page: Number(page || 1),
     search,

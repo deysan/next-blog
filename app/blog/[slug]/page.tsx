@@ -6,7 +6,7 @@ import Markdown from "react-markdown";
 
 import { Badge } from "@/shared/ui/badge";
 import { BlogResponseType } from "@/types";
-import { formatDate, getStrapiMedia } from "@/utils/api-helpers";
+import { formatDate } from "@/utils/api-helpers";
 import { fetchAPI } from "@/utils/fetch-api";
 
 const getBlog = async (slug: string | undefined) => {
@@ -36,7 +36,7 @@ export default async function BlogPage({
 
   if (!blog) return notFound();
 
-  const imageUrl = getStrapiMedia(blog.image?.url) ?? "/public/blogApp.jpg";
+  const imageUrl = blog.image?.url ?? "/public/blogApp.jpg";
   const pageTitle = blog.title;
   const pageDescription =
     blog.description ??
@@ -56,7 +56,7 @@ export default async function BlogPage({
         <meta property="og:image" content={imageUrl} />
         <meta property="og:url" content={pageUrl} />
         <meta property="og:type" content="article" />
-        <meta property="og:site_name" content="Your Blog Name" />
+        <meta property="og:site_name" content="Blog App" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={pageTitle} />
         <meta name="twitter:description" content={pageDescription} />

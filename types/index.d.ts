@@ -13,7 +13,7 @@ export type BlogType = {
 };
 
 export type ImageType = {
-  url: string;
+  url: string | null;
 };
 
 export type TagType = {

@@ -11,7 +11,7 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: "https",
-        hostname: "images.pexels.com",
+        hostname: `${process.env.NEXT_PUBLIC_STRAPI_DOMAIN}`,
       },
     ],
   },

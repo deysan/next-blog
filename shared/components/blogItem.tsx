@@ -2,18 +2,16 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { BlogType } from "@/types";
-import { formatDate, getStrapiMedia } from "@/utils/api-helpers";
+import { formatDate } from "@/utils/api-helpers";
 
 import { Badge } from "../ui/badge";
 
 export function BlogItem({ blog }: { blog: BlogType }) {
-  const imageUrl = getStrapiMedia(blog.image.url);
-
   return (
     <article>
       <div className="flex items-center">
         <Image
-          src={imageUrl ?? "/public/blogApp.jpg"}
+          src={blog.image.url ?? "/public/blogApp.jpg"}
           alt={blog.title}
           className="rounded-t-2xl w-full object-cover"
           width={400}
