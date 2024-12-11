@@ -1,36 +1,71 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Blog Application with Next.js and Strapi
 
-## Getting Started
+This is a blog application built with **Next.js** for the frontend and **Strapi** as the CMS. The application is deployed on **Vercel**, while the backend (Strapi) is hosted on **Strapi Cloud**.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## **Live Demo**
+
+- **Frontend (Next.js):** [https://next-blog-gilt-gamma.vercel.app/](https://next-blog-gilt-gamma.vercel.app/)
+- **Backend Admin Panel (Strapi):** [https://smiling-strength-4b0dd9b607.strapiapp.com/admin/auth/login](https://smiling-strength-4b0dd9b607.strapiapp.com/admin/auth/login)
+
+---
+
+## **Repository Links**
+
+- **Frontend (Next.js):** [https://github.com/deysan/next-blog](https://github.com/deysan/next-blog)
+- **Backend (Strapi):** [https://github.com/deysan/strapi-blog](https://github.com/deysan/strapi-blog)
+
+---
+
+## **Key Features**
+
+- **Home Page (`/`):** Displays all blogs with pagination.
+- **Blog Page (`/blog/[slug]`):** Dynamic pages for individual blog posts.
+- **Tags Page (`/tags/[tag]`):** Filter blogs by tags.
+- **SEO Optimized:** Includes `sitemap.xml` and `robots.txt`.
+- **Responsive Design:** Optimized for mobile and desktop.
+
+---
+
+## **Environment Variables**
+
+> **Note:** These are test environment variables. Replace them with your own secure values when deploying to production.
+
+### **Frontend (`.env`)**
+```env
+NEXT_PUBLIC_STRAPI_API_TOKEN=6e728495ce5ab743c3ec021a
+NEXT_PUBLIC_STRAPI_API_URL=https://smiling-strength-4b0dd9b607.strapiapp.com
+NEXT_PUBLIC_STRAPI_DOMAIN=smiling-strength-4b0dd9b607.media.strapiapp.com
+NEXT_PUBLIC_BLOG_APP_URL=https://next-blog-gilt-gamma.vercel.app
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### **Backend (`.env`)**
+```
+HOST=0.0.0.0
+PORT=1337
+APP_KEYS="toBeModified1,toBeModified2"
+API_TOKEN_SALT=tobemodified
+ADMIN_JWT_SECRET=tobemodified
+TRANSFER_TOKEN_SALT=tobemodified
+JWT_SECRET=tobemodified
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## **SEO Links**
 
-## Learn More
+- **Frontend Sitemap**: https://next-blog-gilt-gamma.vercel.app/sitemap.xml
+- **Frontend Robots.txt**: https://next-blog-gilt-gamma.vercel.app/robots.txt
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## **Performance**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Tested using [PageSpeed Insights](https://pagespeed.web.dev/analysis/https-next-blog-gilt-gamma-vercel-app/jgtikaqnzt?form_factor=mobile). Performance optimizations have been applied to improve the overall user experience.
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+#### **License**
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is licensed under the MIT License.
