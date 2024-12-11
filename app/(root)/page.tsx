@@ -4,6 +4,7 @@ import { BlogItem } from "@/shared/components/blogItem";
 import { Pagination } from "@/shared/components/pagination";
 import { BlogResponseType } from "@/types";
 import { fetchAPI } from "@/utils/fetch-api";
+import { Suspense } from "react";
 
 const PAGE_LIMIT = 3;
 
@@ -115,10 +116,12 @@ export default async function Home({
       )}
 
       <div className="flex justify-center mt-10 gap-x-4">
-        <Pagination
-          pageNumber={pageNumber}
-          isNext={pagination.start + pagination.limit < pagination.total}
-        />
+        <Suspense fallback={<p>Loading...</p>}>
+          <Pagination
+            pageNumber={pageNumber}
+            isNext={pagination.start + pagination.limit < pagination.total}
+          />
+        </Suspense>
       </div>
     </>
   );

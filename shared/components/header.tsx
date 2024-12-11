@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import { Search } from "./search";
+import { Suspense } from "react";
 
 export function Header() {
   return (
@@ -11,7 +12,9 @@ export function Header() {
         </Link>
       </div>
 
-      <Search className="w-full flex-grow order-2 lg:order-none lg:max-w-md " />
+      <Suspense fallback={<p>Loading...</p>}>
+        <Search className="w-full flex-grow order-2 lg:order-none lg:max-w-md " />
+      </Suspense>
 
       <div className="flex items-center gap-x-4">
         <a
