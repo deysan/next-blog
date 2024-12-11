@@ -17,42 +17,51 @@ const getBlogs = async ({
   search?: string;
   tag?: string;
 }) => {
-  const { data, meta } = await fetchAPI<BlogResponseType>("/blogs", {
-    pagination: {
-      limit: PAGE_LIMIT,
-      start: (page - 1) * PAGE_LIMIT,
-    },
-    populate: {
-      image: { fields: ["url"] },
-      tags: { fields: ["name"] },
-    },
-    sort: { publishedAt: "desc" },
-    ...(search
-      ? {
-          filters: {
-            $or: [
-              { title: { $contains: search } },
-              { description: { $contains: search } },
-              { content: { $contains: search } },
-              { tags: { $contains: search } },
-            ],
-          },
-        }
-      : {}),
-    ...(tag
-      ? {
-          filters: {
-            tags: {
-              name: {
-                $eq: tag,
+  try {
+    const { data, meta } = await fetchAPI<BlogResponseType>("/blogs", {
+      pagination: {
+        limit: PAGE_LIMIT,
+        start: (page - 1) * PAGE_LIMIT,
+      },
+      populate: {
+        image: { fields: ["url"] },
+        tags: { fields: ["name"] },
+      },
+      sort: { publishedAt: "desc" },
+      ...(search
+        ? {
+            filters: {
+              $or: [
+                { title: { $contains: search } },
+                { description: { $contains: search } },
+                { content: { $contains: search } },
+                { tags: { $contains: search } },
+              ],
+            },
+          }
+        : {}),
+      ...(tag
+        ? {
+            filters: {
+              tags: {
+                name: {
+                  $eq: tag,
+                },
               },
             },
-          },
-        }
-      : {}),
-  });
+          }
+        : {}),
+    });
 
-  return { blogs: data, pagination: meta.pagination, pageNumber: page };
+    return { blogs: data, pagination: meta.pagination, pageNumber: page };
+  } catch (error) {
+    console.error(error);
+    return {
+      blogs: [],
+      pagination: { limit: PAGE_LIMIT, start: 0, total: 0 },
+      pageNumber: page,
+    };
+  }
 };
 
 export default async function Home({
