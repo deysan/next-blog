@@ -7,7 +7,12 @@ This is a blog application built with **Next.js** for the frontend and **Strapi*
 ## **Live Demo**
 
 - **Frontend (Next.js):** [https://next-blog-gilt-gamma.vercel.app/](https://next-blog-gilt-gamma.vercel.app/)
+
+![Client Side Screen](./public/clientSide.jpg)
+
 - **Backend Admin Panel (Strapi):** [https://smiling-strength-4b0dd9b607.strapiapp.com/admin/auth/login](https://smiling-strength-4b0dd9b607.strapiapp.com/admin/auth/login)
+
+![Admin Side Screen](./public/adminSide.jpg)
 
 ---
 
@@ -33,6 +38,7 @@ This is a blog application built with **Next.js** for the frontend and **Strapi*
 > **Note:** These are test environment variables. Replace them with your own secure values when deploying to production.
 
 ### **Frontend (`.env`)**
+
 ```env
 NEXT_PUBLIC_STRAPI_API_TOKEN=6e728495ce5ab743c3ec021a
 NEXT_PUBLIC_STRAPI_API_URL=https://smiling-strength-4b0dd9b607.strapiapp.com
@@ -41,6 +47,7 @@ NEXT_PUBLIC_BLOG_APP_URL=https://next-blog-gilt-gamma.vercel.app
 ```
 
 ### **Backend (`.env`)**
+
 ```
 HOST=0.0.0.0
 PORT=1337
@@ -63,6 +70,8 @@ JWT_SECRET=tobemodified
 ## **Performance**
 
 Tested using [PageSpeed Insights](https://pagespeed.web.dev/analysis/https-next-blog-gilt-gamma-vercel-app/jgtikaqnzt?form_factor=mobile). Performance optimizations have been applied to improve the overall user experience.
+
+![Page Speed](./public/pagespeed.jpg)
 
 ---
 
