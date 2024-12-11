@@ -1,9 +1,9 @@
-import { PageProps } from "@/.next/types/app/layout";
+import Head from "next/head";
+
 import { BlogItem } from "@/shared/components/blogItem";
 import { Pagination } from "@/shared/components/pagination";
-import { BlogResponseType, SearchParamsProps } from "@/types";
+import { BlogResponseType } from "@/types";
 import { fetchAPI } from "@/utils/fetch-api";
-import Head from "next/head";
 
 const PAGE_LIMIT = 3;
 
